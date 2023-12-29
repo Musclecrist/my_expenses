@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Expenses - Create
+{% endblock %}
+
+{% block content %}
+{% if saved %}
+Expense was saved<br/>
+Go back to <a href="/e/expenses">List Expenses</a><br/>
+Go to  <a href="/e/expenses/{{id}}">your expense</a>
+{% else %}
+<form method="POST" enctype="multipart/form-data">
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit">
+</form>
+{% endif %}
+{% endblock %}

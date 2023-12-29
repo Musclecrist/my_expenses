@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Expenses - Detail
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+
+    <!-- Specify fields to be displayed -->
+    {{ data.store }}<br/>
+    {{ data.day }}<br/>
+    {{ data.sum }}<br/>
+    {{ data.product }}<br/>
+
+</div>
+Go back to <a href="/e/expenses">List Expenses</a> <br/>
+{% endblock %}

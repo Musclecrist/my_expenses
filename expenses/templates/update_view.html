@@ -1,0 +1,27 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Expenses - Update
+{% endblock %}
+
+{% block content %}
+{% if saved %}
+Expense was updated<br/>
+Go back to <a href="/e/expenses">List Expenses</a> <br/>
+Go to  <a href="/e/expenses/{{id}}">your expense</a>
+{% else %}
+<div class="main">
+    <!-- Create a Form -->
+    <form method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+
+        <!-- form as paragraph -->
+        {{ form.as_p }}
+
+        <input type="submit" value="Update">
+    </form>
+
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+ Expenses - List of all expenses
+{% endblock %}
+
+{% block content %}
+ <a href="/e/expenses/create">Create Expense</a>
+<div class="main">
+
+    {% for data in dataset %}
+
+    {{ data.store }}<br/>
+    {{ data.day }}<br/>
+    {{ data.sum }}<br/>
+    {{ data.product }}<br/>
+    <a href="/e/expenses/{{data.id}}">Detail</a>
+    <a href="/e/expenses/update/{{data.id}}">Update</a>
+    <a href="/e/expenses/delete/{{data.id}}">Delete</a>
+    <hr/>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
